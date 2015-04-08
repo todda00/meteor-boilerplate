@@ -1,0 +1,9 @@
+<template name="msgs">
+	{{#each msgs}}
+    {{> msg}}
+  {{/each}}
+</template>
+
+<template name="msg">
+	<div class="alert alert-{{msgClass}}" role="alert"><i class="fa {{msgIcon}}"></i> {{message}}</div>
+</template>

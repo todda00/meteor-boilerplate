@@ -1,0 +1,12 @@
+@import '../../stylesheets/mixins.import.less';
+@import '../../stylesheets/variables.import.less';
+
+.addEditUser{
+	max-height: 0;
+	opacity:0;
+	&.transitioned{
+		.transition(.4s, ease-out);
+		max-height:1000px;
+		opacity:1;
+	}
+}

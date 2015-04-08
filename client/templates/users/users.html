@@ -1,0 +1,19 @@
+<template name="users">
+  <div class="users">
+    <div class="page-header">
+      <h1>User List </h1>
+      {{#if isInRole 'manage-users'}}
+        {{> button class='btn-success pull-right add-user' label='Add New User' icon='fa-plus'}}
+      {{/if}}
+    </div>
+    {{#if addingUser}}
+      {{> addEditUser}}
+    {{/if}}
+    <ul class="list-group">
+      {{#each this}}
+        <li class="list-group-item"><a href='/users/{{_id}}'>{{ profile.firstName }} {{profile.lastName}}</a></li>
+      {{/each}}
+    </ul>
+
+  </div>
+</template>

@@ -1,0 +1,35 @@
+<template name="permissions">
+  <div class='permissions'>
+    <div class="clearfix">
+      <h4 class='pull-left'>Permissions</h4>
+      {{#if showAddGlobal}}
+        {{> button label='Add Global Access' class='btn-danger btn-xs add-global-access pull-right' }}
+      {{/if}}
+
+  </div>
+    <!-- Get Practices this logged in user can assign permissions to -->
+    <!-- {{#if isInRole 'manage-users' GLOBAL_GROUP}}
+      <div class="input-group">
+        <span class="input-group-addon">Add User to a Practice</span>
+        {{> inputAutocomplete settings=autoCompleteSettings id="groupAutocomplete" class="form-control" placeholder="Practice Name"}}
+      </div>
+    {{/if}} -->
+
+    <!-- Get practices this user has permissions in -->
+    <!-- <ul class="list-group">
+    {{#each objToArray roles}}
+        <li class="list-group-item">
+          {{ practiceIdToName name }}
+          <div class="pull-right">
+            {{#each value}}
+              <span class="label label-default">{{this}}</span>
+            {{/each}}
+            {{#if isInRole 'manage-users' name}}
+              {{ > button class="btn-xs edit-group-roles" label="Edit" attrs=attrsPractice}}
+            {{/if}}
+          </div>
+        </li>
+    {{/each}}
+    </ul> -->
+  </div>
+</template>

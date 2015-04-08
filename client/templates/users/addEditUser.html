@@ -1,0 +1,35 @@
+<template name='addEditUser'>
+  <div class='form-wrap addEditUser container'>
+    <div class="col-sm-12 col-md-8 col-md-offset-2">
+      <form id="addEditUserForm">
+        {{> text_field name="firstName" label="First Name" value=profile.firstName }}
+        {{> text_field name="lastName" label="Last Name" value=profile.lastName }}
+        {{#if addingUser}}
+          {{> text_field name='email' label='Email' value=emails.[0].address }}
+        {{else}}
+          {{> text_field name='email' label='Email' value=emails.[0].address disabled='disabled' }}
+        {{/if}}
+        {{#if isInRole 'manage-users'}}
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Permissions</h3>
+          </div>
+          <div class="panel-body">
+            {{> editGroupRoles}}
+          </div>
+        </div>
+        {{/if}}
+        {{#if addingUser}}
+          {{> submit label='Add'}}
+          {{> button type='reset' label="Cancel" class="cancel"}}
+        {{else}}
+          {{> submit label='Save'}}
+          {{#if isInRole 'manage-users'}}
+            {{> button label="Delete User" class="delete-user"}} 
+          {{/if}}
+        {{/if}}
+
+      </form>
+    </div>
+  </div>
+</template>

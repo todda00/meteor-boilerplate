@@ -1,0 +1,14 @@
+<template name='examples'>
+  <div class="examples">
+    <div class="page-header">
+      <h1>Example List </h1>
+    </div>
+    
+    <ul class="list-group">
+      {{#each this}}
+        <li class="list-group-item">{{#linkTo route='example' slug=slug}}{{name}}{{/linkTo}}</li>
+      {{/each}}
+    </ul>
+
+  </div>
+</template>
